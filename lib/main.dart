@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:udemy_flutter/next_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,6 +46,11 @@ class _MyHomePageState extends State<MyHomePage> {
             return Column(
               children: [
                 ListTile(
+                  onTap: () {
+                    // 画面遷移を記述
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => NextPage()));
+                  },
                   leading: Icon(Icons.vpn_key),
                   title: Text(titleList[i]),
                 ),
@@ -66,8 +72,6 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 
-// todo リスト表示を動的に
-// todo フロートアクションボタンをタップ時に、リストを一つ追加表示
 // todo 新しい画面を作成し、リストを追加したときに遷移
 // todo 新しい画面のレイアウトを作成
 // todo 新しい画面にリストからデータを引き継ぐ
