@@ -70,9 +70,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
-// todo 新しい画面を作成し、リストを追加したときに遷移
-// todo 新しい画面のレイアウトを作成
-// todo 新しい画面にリストからデータを引き継ぐ
-
