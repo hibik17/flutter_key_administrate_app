@@ -48,8 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 ListTile(
                   onTap: () {
                     // 画面遷移を記述
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => NextPage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => NextPage(titleList[i])));
                   },
                   leading: Icon(Icons.vpn_key),
                   title: Text(titleList[i]),
