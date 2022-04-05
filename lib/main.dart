@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,7 +9,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,47 +24,42 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
-
   final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  // listの配列の宣言
+  List<String> titleList = ["amazon", "楽天", "yahoo!"];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("password administration"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: ListView.builder(
+          itemCount: titleList.length,
+          itemBuilder: (BuildContext context, int i) {
+            return Column(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.vpn_key),
+                  title: Text(titleList[i]),
+                ),
+                Divider(),
+              ],
+            );
+          }),
     );
   }
 }
+
+
+// todo リスト表示を動的に
+// todo フロートアクションボタンをタップ時に、リストを一つ追加表示
+// todo 新しい画面を作成し、リストを追加したときに遷移
+// todo 新しい画面のレイアウトを作成
+// todo 新しい画面にリストからデータを引き継ぐ
+
