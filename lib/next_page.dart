@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 class NextPage extends StatefulWidget {
   final String title;
-
-  NextPage(this.title);
+  final String password;
+  NextPage(this.title, this.password);
 
   @override
   _NextPageState createState() => _NextPageState();
@@ -17,7 +17,7 @@ class _NextPageState extends State<NextPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.password),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30),

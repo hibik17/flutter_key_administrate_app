@@ -51,7 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => NextPage(titleList[i])));
+                            builder: (context) =>
+                                NextPage(titleList[i], "pass")));
                   },
                   leading: Icon(Icons.vpn_key),
                   title: Text(titleList[i]),
